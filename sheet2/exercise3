@@ -1,0 +1,11 @@
+from matplotlib import pyplot as plt
+import numpy as np
+from numpy.linalg import norm, solve 
+
+matrixA =np.array([[1,1,1],[1,2,1],[1,3,1],[1,1,2],[1,2,2], [1,3,2],[1,1,3],[1,2,3],[1,3,3], [1,4,4]])
+vectorB = np.array([19,35,31,27,29,37,35,35,48,65])
+
+leftMatrix = np.dot(np.transpose(matrixA), matrixA)
+rightsolution= np.dot(np.transpose(matrixA),vectorB)
+x_coefs = np.linalg.solve(leftMatrix, rightsolution)
+print(f'x_coefs: {x_coefs}')
